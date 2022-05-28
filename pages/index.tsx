@@ -8,6 +8,10 @@ import Oscar from "../components/oscar";
 import Button from "../components/button";
 import Input from "../components/input";
 import Container from "../components/container";
+import LoggedIn from "../components/state/loggedIn";
+import User from "../components/state/user";
+import ThemeContextProvider from "../components/context/ThemeContext";
+import Box from "../components/context/box";
 
 const Home: NextPage = () => {
   const fullName = {
@@ -30,9 +34,9 @@ const Home: NextPage = () => {
   ];
   return (
     <div>
-      <Heading name={"Ivanka"}>Placeholder Text</Heading>
+      <Heading>Placeholder Text</Heading>
       <Oscar>
-        <Heading name={"Marcel"}>Oscar goes to Leonardo Dicaprio</Heading>
+        <Heading>Oscar goes to Leonardo Dicaprio</Heading>
       </Oscar>
       <Greet name="Marcel" isLogged={true} />
       <Person name={fullName} />
@@ -47,6 +51,11 @@ const Home: NextPage = () => {
           backgroundColor: "yellow",
         }}
       />
+      <LoggedIn />
+      <User />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </div>
   );
 };
